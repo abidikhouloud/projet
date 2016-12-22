@@ -1,0 +1,28 @@
+projet_app_homepage:
+    path:     /
+    defaults: { _controller: ProjetAppBundle:Default:index }
+
+
+contact_index:
+    path:     /
+    defaults: { _controller: "ProjetAppBundle:Default:index" }
+    methods:  GET
+
+contact_show:
+    path:     /{id}/show
+    defaults: { _controller: "ProjetAppBundle:Default:show" }
+    methods:  GET
+
+contact_new:
+    path:     /new
+    defaults: { _controller: "ProjetAppBundle:Default:new" }
+    methods:  [GET, POST]
+
+contact_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ProjetAppBundle:Default:edit" }
+    methods:  [GET, POST]
+contact_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ProjetAppBundle:Default:delete" }
+    methods:  DELETE

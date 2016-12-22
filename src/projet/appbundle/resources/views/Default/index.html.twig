@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Liste des contacts</h1>
+
+    <table>
+        <thead>
+            <tr>
+
+                <th>Email</th>
+                <th>Adresse</th>
+                <th>Telephone</th>
+                <th>Site web</th>
+
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for contact in contacts %}
+            <tr>
+
+                <td>{{ contact.email }}</td>
+                <td>{{ contact.adresse }}</td>
+                <td>{{ contact.telephone }}</td>
+                <td>{{ contact.siteWeb }}</td>
+
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('contact_show', { 'id': contact.id }) }}">Afficher détails</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('contact_edit', { 'id': contact.id }) }}">modifier</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('contact_new') }}">Créer un nouveau contact</a>
+        </li>
+    </ul>
+{% endblock %}
